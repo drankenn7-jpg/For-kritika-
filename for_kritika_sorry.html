@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kritika ❤️</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: grid; place-items: center;
+    padding: 22px; font-family: Arial, sans-serif; color: #5b2638;
+    background: linear-gradient(135deg, #ffe2ec, #fff0f4 55%, #ffd6e4);
+    overflow-x: hidden;
+  }
+  .card {
+    width: min(100%, 440px); text-align: center; padding: 32px 24px;
+    background: rgba(255,255,255,.88); border: 1px solid #fff;
+    border-radius: 26px; box-shadow: 0 18px 55px rgba(155, 54, 91, .16);
+    position: relative;
+  }
+  .heart { font-size: 42px; animation: beat 1.2s infinite; }
+  h1 { margin: 12px 0 8px; color: #c33c70; font-size: 2rem; }
+  .sub { color: #986174; margin: 0 0 22px; }
+  .message {
+    text-align: left; line-height: 1.7; background: #fff5f8;
+    border-radius: 18px; padding: 18px; font-size: 15px;
+  }
+  .message p { margin: 0 0 12px; }
+  .message p:last-child { margin-bottom: 0; }
+  button {
+    margin-top: 22px; border: 0; border-radius: 999px; padding: 14px 24px;
+    background: #d94d7e; color: white; font-size: 16px; font-weight: 700;
+    cursor: pointer; box-shadow: 0 8px 20px rgba(217,77,126,.25);
+  }
+  button:active { transform: scale(.98); }
+  #reply { display: none; margin-top: 18px; color: #bd386c; font-weight: 700; line-height: 1.5; }
+  .footer { margin-top: 20px; color: #ad8191; font-size: 12px; }
+  .floating { position: fixed; bottom: -30px; opacity: .65; animation: floatUp 7s linear infinite; pointer-events: none; }
+  @keyframes beat { 0%,100% { transform: scale(1); } 50% { transform: scale(1.16); } }
+  @keyframes floatUp { to { transform: translateY(-110vh) rotate(25deg); opacity: 0; } }
+  @media (max-width: 380px) { h1 { font-size: 1.7rem; } .card { padding: 26px 18px; } }
+</style>
+</head>
+<body>
+<main class="card">
+  <div class="heart">❤️</div>
+  <h1>Hey Kritika...</h1>
+  <p class="sub">I know you're upset. Please read this once. 🥺</p>
+  <section class="message">
+    <p>I'm really sorry, Kritika. ❤️</p>
+    <p>I know I got angry at you first, and when you got upset, I got angry again. I know that wasn't right.</p>
+    <p>I never wanted to hurt you. Sometimes my anger takes over, but that doesn't mean I should make you feel bad.</p>
+    <p>Please don't let this little fight become a reason for us to stop talking. You're important to me, and I don't want my ego to be bigger than our bond.</p>
+    <p>I'm genuinely sorry. 🥺❤️</p>
+    <p>Can we please talk when you're ready? I promise I'll try to understand you better. ❤️</p>
+  </section>
+  <button type="button" onclick="showMessage()">Please forgive me 💗</button>
+  <div id="reply">No pressure to reply right now. I'll give you space, and I'm here when you're ready. ❤️</div>
+  <div class="footer">Made with a sincere apology • For Kritika</div>
+</main>
+<script>
+  function showMessage() {
+    document.getElementById('reply').style.display = 'block';
+  }
+  for (let i = 0; i < 12; i++) {
+    const heart = document.createElement('div');
+    heart.className = 'floating';
+    heart.textContent = ['❤','💕','💗'][i % 3];
+    heart.style.left = (Math.random() * 100) + 'vw';
+    heart.style.animationDelay = (Math.random() * 7) + 's';
+    heart.style.fontSize = (14 + Math.random() * 18) + 'px';
+    document.body.appendChild(heart);
+  }
+</script>
+</body>
+</html>
